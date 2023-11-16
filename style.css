@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'redhat';
+    src: url(redhatfont/TTF/RedHatDisplay-Medium.ttf);
+}
+
+body {
+  
+    font-family: redhat;
+}
+header {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    height: 15vh;
+    color: aliceblue;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+.main_img {
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+.lagoa {
+    left:0;
+    position: absolute;
+    width: 7%;
+}
+.logos {
+   
+    
+    display: flex;
+    justify-content: flex-end; /* Isso alinhará os elementos à direita */
+   
+}
+.box {
+    border: solid 1px;
+    display: inline-block;
+    margin: 1%;
+    width: 22.75%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden; /* Para garantir que as imagens não ultrapassem os limites da div .box */
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta o tamanho da imagem para preencher o espaço do container */
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao passar o mouse sobre a imagem */
+}
+
+.box:hover img {
+    transform: scale(1.1); /* Aumenta ligeiramente a imagem ao passar o mouse sobre ela */
+}
+
+h3 {
+    background-color: black;
+    color: white;
+    padding: 5%;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 5.5%;
+    z-index: 1; /* Garante que o texto esteja acima da imagem */
+    position: relative; /* Define a posição como relativa para garantir o posicionamento correto */
+}
+
+.preco-produto {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    position: relative; /* Define a posição como relativa para garantir o posicionamento correto */
+    z-index: 1; /* Garante que o texto esteja acima da imagem */
+}
+
+a {
+    margin: 2%;
+    text-decoration: none;
+    color: aliceblue;
+}
+a:hover {
+    color: blue;
+}
+.description {
+    width: 50%;
+    text-align: center;
+    font-size: x-large;
+}

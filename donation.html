@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="donation.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Página de Doações</title>
+    <header>
+        <a href="p1.html">Início</a>
+        <a href="#">Colaboradores</a>
+        <a href="donation.html">Doações</a>
+        <a href="https://www.youtube.com/@paeslagoa"><img class="logo" src="images/icons8-youtube-32.png" width="32" height="32">
+        <a href="https://www.instagram.com/paeslagoa/?ref=pregnantchicken.com"><img class="logo" src="images/icons8-instagram-32.png">
+        <a href="#"></a><img class="lagoa" src="images/lagoa_logo.jpg">
+    </header>
+</head>
+<body>
+    <div class="donation-container">
+        <div class="donation-form">
+            <h1>Faça uma Doação</h1>
+            <form action="https://api.sheetmonkey.io/form/xxZDyWb7v1CLpHTuhdUoiB" type="text" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="amount">Valor:</label>
+                <input type="text" id="amount" name="amount" required>
+                
+                <label for="bank-details">Dados Bancários:</label>
+                <textarea id="bank-details" name="bank-details" required></textarea>
+                
+                <button type="submit">Doar</button>
+            </form>
+        </div>
+    
+        <form id="myForm" onsubmit="event.preventDefault();">
+            <label for="itens-cozinha">Itens de Cozinha:</label>
+            <select id="itens-cozinha" name="itens-cozinha">
+                <option value="panela">Panela</option>
+                <option value="frigideira">Frigideira</option>
+                <option value="colher">Colher de pau</option>
+                <option value="faca">Faca de cozinha</option>
+                <option value="escorredor">Escorredor de macarrão</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+            <button type="button" onclick="enviarERemover()">Doar</button>
+        </form>
+        
+        <script>
+        function enviarERemover() {
+            var selectBox = document.getElementById("itens-cozinha");
+            var selectedIndex = selectBox.selectedIndex;
+        
+            if (selectedIndex !== -1) {
+                var selectedValue = selectBox.options[selectedIndex].value;
+        
+                // Remove o item selecionado da caixa de seleção
+                selectBox.remove(selectedIndex);
+        
+                // Envia o item selecionado para a URL usando fetch()
+                fetch("https://api.sheetmonkey.io/form/xxZDyWb7v1CLpHTuhdUoiB", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ "item-selecionado": selectedValue })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Dados enviados com sucesso!");
+                    } else {
+                        throw new Error("Erro ao enviar dados");
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro:", error);
+                });
+            }
+        }
+        </script>
+        
+        
+        <div class="qr-code">
+            <img src="images/qr_code.png" alt="QR Code">
+            <p>Escanee o QR Code para doar</p>
+        </div>
+    </div>
+</body>
+</html>

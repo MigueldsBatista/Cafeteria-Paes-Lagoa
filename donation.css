@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.donation-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.donation-form {
+    width: 40%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.donation-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.qr-code {
+    width: 40%;
+    text-align: center;
+}
+
+.qr-code img {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.qr-code p {
+    font-size: 14px;
+}
